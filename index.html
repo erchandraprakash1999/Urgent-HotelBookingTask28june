@@ -29,7 +29,7 @@
         .form-group label {
             display: inline-block;
             margin-bottom: 5px;
-           font-size: large;
+            font-size: large;
         }
 
         .quantity-container {
@@ -57,11 +57,11 @@
         .quantity-button {
             width: 45px;
             height: 30px;
-            
+
             text-align: center;
             line-height: 30px;
             cursor: pointer;
-          
+
         }
 
         .quantity-input {
@@ -95,25 +95,27 @@
         }
 
         .title-fields input {
-            
-           width:15vw;
-           padding: 4px 0 4px 0;
+
+            width: 15vw;
+            padding: 4px 0 4px 0;
         }
 
         #arrival-date {
             padding: 5px;
         }
+
         .form-group .hotel-pref {
             display: inline-block;
             margin-right: 10px;
         }
+
         .form-group .hotel-pref label {
             font-weight: normal;
         }
-        .form-group #full{
+
+        .form-group #full {
             display: block;
         }
-
     </style>
 </head>
 
@@ -122,28 +124,30 @@
     <div class="form-container">
         <form>
             <div class="form-group">
-                <select id="destination" required style="width: 90%; padding: 10px;">
+                <!-- <select id="destination" required style="width: 90%; padding: 10px;">
                     <option value="" disabled selected>Select a destination</option>
                     <option value="paris">Paris</option>
                     <option value="new-york">New York</option>
                     <option value="tokyo">Tokyo</option>
                     <option value="sydney">Sydney</option>
                     <option value="rome">Rome</option>
-                    <!-- Add more options as needed -->
-                </select>
+                </select> -->
+                <textarea name="" id="destination" placeholder="destination" required style="width: 90%; padding: 10px;"></textarea>
             </div>
 
             <div class="form-group">
-                <label style="font-size:medium;" >Travel Details</label>
+                <label style="font-size:medium;">Travel Details</label>
             </div>
 
             <div class="form-group quantity-container">
                 <div class="quantity-item">
                     <label for="adults" style="font-size: small;">Adult <span>(Age 12+)</span></label>
                     <div class="quantity-picker">
-                        <div class="quantity-button" id="decrease" style="border-right: 1px rgb(154, 139, 139) solid;">-</div>
+                        <div class="quantity-button" id="decrease" style="border-right: 1px rgb(154, 139, 139) solid;">-
+                        </div>
                         <input type="text" class="quantity-input" id="quantity" value="2" readonly>
-                        <div class="quantity-button" id="increase" style="border-left: 1px rgb(154, 139, 139) solid;">+</div>
+                        <div class="quantity-button" id="increase" style="border-left: 1px rgb(154, 139, 139) solid;">+
+                        </div>
                     </div>
                 </div>
 
@@ -152,16 +156,18 @@
                     <div class="quantity-picker">
                         <div class="quantity-button" id="child-decrease" style="border-right: 1px gray solid;">-</div>
                         <input type="text" class="quantity-input" id="child-quantity" value="0" readonly>
-                        <div class="quantity-button" id="child-increase" style="border-left: 1px rgb(154, 139, 139) solid;">+</div>
+                        <div class="quantity-button" id="child-increase"
+                            style="border-left: 1px rgb(154, 139, 139) solid;">+</div>
                     </div>
                 </div>
 
                 <div class="quantity-item">
-                    <label for="days"  style="font-size: small;">Estimated Travel Days</label>
+                    <label for="days" style="font-size: small;">Estimated Travel Days</label>
                     <div class="quantity-picker">
                         <div class="quantity-button" id="days-decrease" style="border-right: 1px gray solid;">-</div>
                         <input type="text" class="quantity-input" id="days-quantity" value="1" readonly>
-                        <div class="quantity-button" id="days-increase" style="border-left: 1px rgb(154, 139, 139) solid;">+</div>
+                        <div class="quantity-button" id="days-increase"
+                            style="border-left: 1px rgb(154, 139, 139) solid;">+</div>
                     </div>
                 </div>
 
@@ -192,9 +198,11 @@
             </div>
 
 
-            <div class="form-group" style="margin-top: 30px;font-family:sans-serif;" >
-                <label for="customize" id="full" style="font-size: small;">Any specific requests or interests to customize your tour?</label>
-                <textarea id="customize" class="full-width" rows="2" cols="90" placeholder="Share your trip ideas here, e.g. family travel, honeymoon, history, culture, or your requests on trip length, accommodation, food..."></textarea>
+            <div class="form-group" style="margin-top: 30px;font-family:sans-serif;">
+                <label for="customize" id="full" style="font-size: small;">Any specific requests or interests to
+                    customize your tour?</label>
+                <textarea id="customize" class="full-width" rows="2" cols="90"
+                    placeholder="Share your trip ideas here, e.g. family travel, honeymoon, history, culture, or your requests on trip length, accommodation, food..."></textarea>
             </div>
 
             <div class="form-group title-fields" style="margin-top: 30px;">
@@ -218,7 +226,7 @@
     </div>
 
     <script>
-        document.getElementById('decrease').onclick = function() {
+        document.getElementById('decrease').onclick = function () {
             var quantity = document.getElementById('quantity');
             var value = parseInt(quantity.value, 10);
             if (value > 1) {
@@ -226,13 +234,13 @@
             }
         };
 
-        document.getElementById('increase').onclick = function() {
+        document.getElementById('increase').onclick = function () {
             var quantity = document.getElementById('quantity');
             var value = parseInt(quantity.value, 10);
             quantity.value = value + 1;
         };
 
-        document.getElementById('child-decrease').onclick = function() {
+        document.getElementById('child-decrease').onclick = function () {
             var quantity = document.getElementById('child-quantity');
             var value = parseInt(quantity.value, 10);
             if (value > 0) {
@@ -240,13 +248,13 @@
             }
         };
 
-        document.getElementById('child-increase').onclick = function() {
+        document.getElementById('child-increase').onclick = function () {
             var quantity = document.getElementById('child-quantity');
             var value = parseInt(quantity.value, 10);
             quantity.value = value + 1;
         };
 
-        document.getElementById('days-decrease').onclick = function() {
+        document.getElementById('days-decrease').onclick = function () {
             var quantity = document.getElementById('days-quantity');
             var value = parseInt(quantity.value, 10);
             if (value > 1) {
@@ -254,7 +262,7 @@
             }
         };
 
-        document.getElementById('days-increase').onclick = function() {
+        document.getElementById('days-increase').onclick = function () {
             var quantity = document.getElementById('days-quantity');
             var value = parseInt(quantity.value, 10);
             quantity.value = value + 1;
